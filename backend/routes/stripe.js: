@@ -1,0 +1,18 @@
+router.post('/create-checkout-session', async (req, res) => {
+  const { userEmail, priceId } = req.body; // priceId wybierasz Silver / Premium / Monster
+
+  try {
+    const session = await stripe.checkout.sessions.create({
+      payment_method_types: ['card'],
+      line_items: [{ price: priceId, quantity: 1 }],
+      mode: 'subscription',
+      customer_email: userEmail,
+      success_url: 'https://twojadomena.com/success',
+      cancel_url: 'https://twojadomena.com/cancel',
+    });
+    res.json({ url: session.url });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: 'Błąd Stripe' });
+  }
+});
