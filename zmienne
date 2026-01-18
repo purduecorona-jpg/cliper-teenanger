@@ -1,0 +1,2 @@
+export STRIPE_SECRET_KEY="twój_klucz_live"
+export STRIPE_WEBHOOK_SECRET="twój_webhook_secret"
