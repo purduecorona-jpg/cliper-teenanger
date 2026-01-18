@@ -1,0 +1,3 @@
+<StripeButton userEmail={email} priceId="price_1SpiAa639JRV7b5v8XuLdpsi" /> // Silver
+<StripeButton userEmail={email} priceId="price_1SpiFp639JRV7b5vFrvUPG2P" /> // Premium
+<StripeButton userEmail={email} priceId="price_1SpiXXXXXXX" /> // Monster
